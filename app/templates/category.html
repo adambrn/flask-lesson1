@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ category.name }}</h2>
+    <ul class="list-group">
+        {% for product in category.products %}
+            <li class="list-group-item">
+                <a href="{{ url_for('product', product_id=product.id) }}">{{ product.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
